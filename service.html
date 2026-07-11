@@ -378,6 +378,57 @@
                     text-decoration: none;
                 }
 
+                /* Subtle luxury motion: elegant rather than distracting. */
+                @keyframes project-rise {
+                    from { opacity: 0; transform: translateY(26px); }
+                    to { opacity: 1; transform: translateY(0); }
+                }
+
+                @keyframes soft-float {
+                    0%, 100% { transform: translateY(0); }
+                    50% { transform: translateY(-9px); }
+                }
+
+                @keyframes gold-shimmer {
+                    0% { background-position: 0% 50%; }
+                    100% { background-position: 200% 50%; }
+                }
+
+                @keyframes frame-glow {
+                    0%, 100% { box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25), 0 0 0 rgba(247, 201, 72, 0); }
+                    50% { box-shadow: 0 28px 70px rgba(0, 0, 0, 0.28), 0 0 30px rgba(247, 201, 72, 0.22); }
+                }
+
+                .project-hero-card { animation: project-rise 0.8s cubic-bezier(.2,.8,.2,1) both; }
+                .project-kicker { animation: project-rise 0.65s 0.18s ease both; }
+                .project-title { animation: project-rise 0.7s 0.28s ease both; }
+                .project-description { animation: project-rise 0.7s 0.38s ease both; }
+                .project-title span {
+                    color: transparent;
+                    background: linear-gradient(100deg, #f7c948 0%, #fff2ba 45%, #f7c948 70%);
+                    background-size: 200% 100%;
+                    -webkit-background-clip: text;
+                    background-clip: text;
+                    animation: gold-shimmer 3.5s linear infinite;
+                }
+                .highlight-card { opacity: 0; animation: project-rise 0.6s ease forwards; transition: transform 0.28s ease, background 0.28s ease; }
+                .highlight-card:nth-child(1) { animation-delay: 0.48s; }
+                .highlight-card:nth-child(2) { animation-delay: 0.60s; }
+                .highlight-card:nth-child(3) { animation-delay: 0.72s; }
+                .highlight-card:nth-child(4) { animation-delay: 0.84s; }
+                .highlight-card:hover { transform: translateY(-6px); background: rgba(247, 201, 72, 0.13); }
+                .cta-bar { animation: project-rise 0.65s 0.92s ease both; }
+                .video-frame { animation: soft-float 5.5s ease-in-out infinite, frame-glow 4s ease-in-out infinite; }
+                .detail-card { opacity: 0; animation: project-rise 0.7s ease forwards; transition: transform 0.3s ease, border-color 0.3s ease; }
+                .detail-card:nth-child(1) { animation-delay: 0.25s; }
+                .detail-card:nth-child(2) { animation-delay: 0.40s; }
+                .detail-card:nth-child(3) { animation-delay: 0.55s; }
+                .detail-card:hover { transform: translateY(-8px); border-color: rgba(247, 201, 72, 0.52); }
+
+                @media (prefers-reduced-motion: reduce) {
+                    .project-hero-card, .project-kicker, .project-title, .project-description, .highlight-card, .cta-bar, .video-frame, .detail-card, .project-title span { animation: none; opacity: 1; }
+                }
+
                 @media (max-width: 991.98px) {
                     .project-hero-card,
                     .details-wrap {
