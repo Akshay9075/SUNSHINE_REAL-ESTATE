@@ -239,6 +239,21 @@ a:focus {
 @media (max-width: 991.98px) {
     .nav-bar .navbar {
         padding: 15px;
+        position: relative;
+        justify-content: center;
+    }
+
+    .nav-bar .navbar-brand {
+        margin-right: 0;
+    }
+
+    .nav-bar .navbar-brand img {
+        margin-right: 0 !important;
+    }
+
+    .nav-bar .navbar-toggler {
+        position: absolute;
+        right: 15px;
     }
     
     .nav-bar a.nav-link {
