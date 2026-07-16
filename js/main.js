@@ -56,6 +56,32 @@
         $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
         return false;
     });
+
+    // Send homepage property enquiries to WhatsApp with the completed form details.
+    $(document).on('submit', '#propertyEnquiryForm', function (event) {
+        event.preventDefault();
+
+        var form = this;
+        if (!form.checkValidity()) {
+            form.reportValidity();
+            return;
+        }
+
+        var name = form.elements['Name'].value.trim();
+        var mobile = form.elements['Mobile'].value.trim();
+        var email = form.elements['Email'].value.trim();
+        var enquiryType = form.elements['Enquiry Type'].value;
+        var requirement = form.elements['Message'].value.trim() || 'Not specified';
+        var message = 'Hello SUNSHINE REAL ESTATE,%0A%0A' +
+            '*New Property Enquiry*%0A' +
+            '*Name:* ' + name + '%0A' +
+            '*Mobile:* ' + mobile + '%0A' +
+            '*Email:* ' + email + '%0A' +
+            '*Enquiry Type:* ' + enquiryType + '%0A' +
+            '*Requirement:* ' + requirement;
+
+        window.open('https://wa.me/919028510897?text=' + encodeURIComponent(message.replace(/%0A/g, '\n')), '_blank');
+    });
     
     
     // Sticky Navbar
