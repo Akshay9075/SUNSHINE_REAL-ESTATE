@@ -596,6 +596,82 @@
                 </div>
             </div>
 
+            <!-- Mountain Hills Project Start -->
+            <section class="mountain-hills" aria-labelledby="mountain-hills-title">
+                <div class="container">
+                    <div class="mountain-hills__heading text-center wow fadeInUp" data-wow-delay="0.1s">
+                        <span>New featured project</span>
+                        <h2 id="mountain-hills-title">Mountain Hills <em>Farmhouse &amp; Resort</em></h2>
+                        <p>Luxurious living amidst nature, with a secure opportunity for the future.</p>
+                    </div>
+
+                    <div class="mountain-hills__hero wow fadeInUp" data-wow-delay="0.15s">
+                        <div class="mountain-hills__video">
+                            <video controls preload="metadata" playsinline poster="image/inline-poster.png" aria-label="Mountain Hills Farmhouse and Resort project video">
+                                <source src="image/videos/mountain-hills-project.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <button type="button" class="mountain-hills__video-tag" aria-label="Play Mountain Hills project video"><i class="fas fa-play"></i></button>
+                        </div>
+                        <div class="mountain-hills__intro">
+                            <span class="mountain-hills__eyebrow">Approved farmland project</span>
+                            <h3>Nature, leisure &amp; growth in one destination.</h3>
+                            <p>Just 45 minutes from Nagpur, Mountain Hills is set among beautiful natural hill ranges on the Butibori–Umred State Highway. Choose residential, commercial, or farmhouse plots in a destination built for peaceful stays, tourism, and long-term appreciation.</p>
+                            <div class="mountain-hills__stats">
+                                <div><strong>₹749</strong><span>Starting per sq. ft.</span></div>
+                                <div><strong>1,500–10,000</strong><span>Sq. ft. plot sizes</span></div>
+                                <div><strong>50+</strong><span>Premium amenities</span></div>
+                            </div>
+                            <div class="mountain-hills__actions">
+                                <a href="tel:+919028510897" class="mountain-hills__button"><i class="fas fa-phone-alt"></i> Book a Site Visit</a>
+                                <a href="https://wa.me/919028510897?text=Hello%20SUNSHINE%20REAL%20ESTATE%2C%20I%20want%20details%20about%20Mountain%20Hills%20Farmhouse%20%26%20Resort." class="mountain-hills__whatsapp" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mountain-hills__details">
+                        <div class="col-lg-4 mb-4 mb-lg-0 wow fadeInUp" data-wow-delay="0.2s">
+                            <article class="mountain-hills__card mountain-hills__location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Prime location</span>
+                                <h3>Mouza Piti Chua</h3>
+                                <p>Butibori–Umred State Highway, approximately 45 minutes from Nagpur.</p>
+                                <small>Surrounded by scenic hills and natural beauty.</small>
+                            </article>
+                        </div>
+                        <div class="col-lg-4 mb-4 mb-lg-0 wow fadeInUp" data-wow-delay="0.25s">
+                            <article class="mountain-hills__card">
+                                <i class="fas fa-umbrella-beach"></i>
+                                <span>Resort lifestyle</span>
+                                <h3>50+ Premium Amenities</h3>
+                                <ul>
+                                    <li>Water park &amp; club house</li>
+                                    <li>Grand banquet hall &amp; destination weddings</li>
+                                    <li>Landscaped gardens &amp; family entertainment zone</li>
+                                </ul>
+                            </article>
+                        </div>
+                        <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+                            <article class="mountain-hills__card">
+                                <i class="fas fa-binoculars"></i>
+                                <span>Growth around you</span>
+                                <h3>Close to Key Destinations</h3>
+                                <ul>
+                                    <li>Karhandla Jungle Safari &amp; Karhandla Dam</li>
+                                    <li>Makardhokda Dam &amp; Navegaon Gate Safari</li>
+                                    <li>NIMZ project and MIDC industrial area</li>
+                                </ul>
+                            </article>
+                        </div>
+                    </div>
+
+                    <div class="mountain-hills__closing wow fadeInUp" data-wow-delay="0.35s">
+                        <div><span>Limited plots available</span><h3>Own a place where your investment grows with nature.</h3></div>
+                        <a href="tel:+919028510897">Talk to our property expert <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </section>
+            <!-- Mountain Hills Project End -->
 
             <!-- Property Types Start -->
             <section class="property-types property-types--project" aria-labelledby="project-property-types-title">
@@ -723,5 +799,19 @@
 
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
+        <script>
+            document.querySelectorAll('.mountain-hills__video').forEach(function (videoWrap) {
+                var video = videoWrap.querySelector('video');
+                var playButton = videoWrap.querySelector('.mountain-hills__video-tag');
+
+                playButton.addEventListener('click', function () {
+                    if (video.paused) video.play();
+                    else video.pause();
+                });
+
+                video.addEventListener('play', function () { videoWrap.classList.add('is-playing'); });
+                video.addEventListener('pause', function () { videoWrap.classList.remove('is-playing'); });
+            });
+        </script>
     </body>
 </html>
